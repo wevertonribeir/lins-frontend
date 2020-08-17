@@ -24,3 +24,12 @@ export function USER_GET(token) {
     },
   };
 }
+
+export function CLIENTE_GET(id) {
+  return {
+    url: API_URL + '/cliente/' + id,
+    options: {
+      method: 'POST',
+    },
+  };
+}

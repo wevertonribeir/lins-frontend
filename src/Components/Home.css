@@ -1,0 +1,50 @@
+.site-hero {
+  margin-bottom: 10rem;
+}
+.site-hero,
+.site-hero .row {
+  min-height: 700px;
+}
+.site-hero.inner,
+.site-hero.inner .row {
+  min-height: 400px;
+  height: calc(50vh - 95px);
+}
+.site-hero h1 {
+  font-size: 2rem;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#c70039),
+    color-stop(70%, #ff5733)
+  );
+  background: -webkit-linear-gradient(left, #c70039, #ff5733 70%);
+  background: -o-linear-gradient(left, #c70039, #ff5733 70%);
+  background: linear-gradient(to right, #c70039, #ff5733 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media (min-width: 992px) {
+  .site-hero h1 {
+    font-size: 6rem;
+  }
+}
+.site-hero .caption {
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .site-hero .caption {
+    font-size: 1.7rem;
+  }
+}
+
+.btn-custom {
+  text-transform: uppercase;
+  color: #fff !important;
+  background: #3f4046;
+  padding: 16px 30px;
+  display: inline-block;
+  letter-spacing: 0.2em;
+  position: relative;
+}

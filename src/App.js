@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Footer from './Components/Footer';
+import Header from './Components/Header';
+import Home from './Components/Home';
+import Login from './Components/Login/Login';
+import Admin from './Components/Pages/Admin/Admin';
+import Cliente from './Components/Pages/Cliente/Cliente';
+import ProtectedRoute from './Components/Helper/ProtectedRoute';
+import { UserStorage } from './UserContext';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <BrowserRouter>
+        <UserStorage>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login/*" element={<Login />} />
+            <ProtectedRoute path="/admin" element={<Admin />} nivel="1" />
+            <ProtectedRoute path="/cliente" element={<Cliente />} nivel="2" />
+          </Routes>
+          <Footer />
+        </UserStorage>
+      </BrowserRouter>
     </div>
   );
 }

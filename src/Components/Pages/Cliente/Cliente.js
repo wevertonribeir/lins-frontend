@@ -13,7 +13,6 @@ const Cliente = () => {
       const { url, options } = CLIENTE_GET(data.id);
       const response = await fetch(url, options);
       const json = await response.json();
-      console.log(json);
       setCliente(json);
     } showCliente();
   }, [])
